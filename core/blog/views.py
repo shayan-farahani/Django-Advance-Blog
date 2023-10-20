@@ -32,11 +32,8 @@ class PostDetail(LoginRequiredMixin, DetailView):
 
 class PostCreatedView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['image', 'title', 'content', 'status', 'category', 'published_date']
+    fields = ['author', 'image', 'title', 'content', 'status', 'category', 'published_date']
     success_url = '/blog/'
-    def form_valid(self, form: BaseModelForm):
-        form.instance.author = self.request.user
-        return super().form_valid(form)
 
 class PostEditView(LoginRequiredMixin, UpdateView):
     model = Post

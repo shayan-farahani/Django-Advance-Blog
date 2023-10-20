@@ -24,7 +24,7 @@
                     <a href="{% url 'blog:delete' pk=post.id %}">
                         <h4>delete</h4>
                     </a>
-                    <small> {{ post.author.email }}, {{ post.created_date|date:'Y M d' }}</small>
+                    <small> {{ post.author.user }}, {{ post.created_date|date:'Y M d' }}</small>
                 </li>
             </h4>
             {% endfor %}
