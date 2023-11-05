@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 # Create your views here.
 
 class IndexView(LoginRequiredMixin, TemplateView):
@@ -14,10 +14,11 @@ class IndexView(LoginRequiredMixin, TemplateView):
     """
     template_name = 'index.html'
 
-class PostList(LoginRequiredMixin, ListView):
+class PostList(PermissionRequiredMixin, LoginRequiredMixin, ListView):
     """
     this class for show list blog
     """
+    permission_required = 'blog.view_post'
     queryset = Post.objects.all()
     ordering = '-id'
     paginate_by = 3
