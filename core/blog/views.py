@@ -1,47 +1,118 @@
-from typing import Any
-from django.db.models.query import QuerySet
-from django.forms.models import BaseModelForm
-from django.http import HttpResponse
 from django.shortcuts import render
-from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.views.generic.base import TemplateView, RedirectView
+from django.views.generic import (
+    ListView,
+    DetailView,
+    FormView,
+    CreateView,
+    UpdateView,
+    DeleteView,
+)
+from django.http import HttpResponse
 from .models import Post
-from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.shortcuts import get_object_or_404
+from .forms import PostForm
+from django.contrib.auth.mixins import (
+    LoginRequiredMixin,
+    PermissionRequiredMixin,
+)
+
 # Create your views here.
 
-class IndexView(LoginRequiredMixin, TemplateView):
+# Function Base View show a template
+''' 
+def indexView(request):
     """
-    a class based for show index page
+    a function based view to show index page
     """
-    template_name = 'index.html'
+    name = "ali"
+    context = {"name":name}
+    return render(request,"index.html",context)
+'''
 
-class PostList(PermissionRequiredMixin, LoginRequiredMixin, ListView):
+
+class IndexView(TemplateView):
     """
-    this class for show list blog
+    a class based view to show index page
     """
-    permission_required = 'blog.view_post'
+
+    template_name = "index.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["name"] = "ali"
+        # context["posts"] = Post.objects.all()
+        return context
+
+
+""" FBV for redirect
+from django.shortcuts import redirect
+def redirectToMaktab(request):
+    return redirect('https://maktabkhooneh.com')
+
+"""
+
+
+class RedirectToMaktab(RedirectView):
+    """
+    Redirection view sample for maktabkhooneh
+    """
+
+    url = "https://maktabkhooneh.com"
+
+    def get_redirect_url(self, *args, **kwargs):
+        return super().get_redirect_url(*args, **kwargs)
+
+
+class PostListView(ListView):
+    permission_required = "blog.view_post"
     queryset = Post.objects.all()
-    ordering = '-id'
-    paginate_by = 3
-    context_object_name = 'posts'
+    # model = Post
+    context_object_name = "posts"
+    # paginate_by = 2
+    ordering = "-id"
     # def get_queryset(self):
     #     posts = Post.objects.filter(status=True)
     #     return posts
 
 
-class PostDetail(LoginRequiredMixin, DetailView):
+class PostDetailView(LoginRequiredMixin, DetailView):
     model = Post
 
-class PostCreatedView(LoginRequiredMixin, CreateView):
+
+class PostListApiView(TemplateView):
+    template_name = "blog/post_list_api.html"
+
+
+"""
+class PostCreateView(FormView):
+    template_name = 'contact.html'
+    form_class = PostForm
+    success_url = '/blog/post/'
+
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
+"""
+
+
+class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
-    fields = ['author', 'image', 'title', 'content', 'status', 'category', 'published_date']
-    success_url = '/blog/'
+    # fields = ['author', 'title', 'content','status', 'category', 'published_date']
+    form_class = PostForm
+    success_url = "/blog/post/"
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
 
 class PostEditView(LoginRequiredMixin, UpdateView):
     model = Post
-    fields = ['author', 'image', 'title', 'content', 'status', 'category', 'published_date']
-    success_url = '/blog/'
+    form_class = PostForm
+    success_url = "/blog/post/"
 
 
 class PostDeleteView(LoginRequiredMixin, DeleteView):
     model = Post
-    success_url = '/blog/'
+    success_url = "/blog/post/"

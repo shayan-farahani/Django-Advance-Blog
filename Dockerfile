@@ -1,8 +1,8 @@
 FROM python:3.8.2-slim-buster
 
-ENV PYTHONDONTWRITEBYTECODE=1
+  
 ENV PYTHONUNBUFFERED=1
-
+ENV PIP_ROOT_USER_ACTION=ignore
 WORKDIR /app
 
 COPY requirements.txt /app/

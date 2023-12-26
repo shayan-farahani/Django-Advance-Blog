@@ -6,7 +6,7 @@
     <title>Post Detail</title>
 </head>
 <body>
-    <img src="{{ object.image.url }}">
+    {% if object.image %}<img style="height: 250px; width: 250px;" src="{{ object.image.url }}" alt="{{object.title}}">{% endif %}
     <h1>{{ object.title }} - {{ post.id }}</h1>
     <hr>
     <small>{{ post.author.email }} - ({{post.published_date|date:'Y M d'}})</small>
