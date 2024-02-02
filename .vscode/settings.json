@@ -3,5 +3,9 @@
         "authtoken",
         "eiusmod",
         "shayan"
-    ]
+    ],
+    "liveServer.settings.port": 5758,
+    "[markdown]": {
+        "editor.defaultFormatter": null
+    }
 }

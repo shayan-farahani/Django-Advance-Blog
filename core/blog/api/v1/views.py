@@ -10,6 +10,7 @@ from .permissions import IsOwnerOrReadOnly
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters
 from .paginations import DefaultPagination
+from rest_framework.generics import GenericAPIView
 
 
 # from rest_framework.generics import (
