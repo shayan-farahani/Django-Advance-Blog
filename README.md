@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <br />
 <div align="center">
     <a href="/">
@@ -94,3 +95,7 @@ _To work with the project you must install the following packages_
 ## Contact
 
 shayan - shayanpars230@gmail.com
+=======
+# django-blog-learn
+advane blog
+>>>>>>> 24a4668daa078624a706378bfd9a500ed14ef856
