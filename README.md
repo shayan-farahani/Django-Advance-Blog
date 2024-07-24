@@ -57,25 +57,13 @@ I would like to work with them more in this project .
 
 
 
-### Installation
-
-_To work with the project you must install the following packages_
-
-2. install package
-   ```sh
-    pip install -r requirements.txt
-   ```
-
-
-
 <!-- ROADMAP -->
 ## Project Setup
-
-- [ ] install package 
-- [ ] go to directory project
-- [ ] type in cmd ```cd backend```
-- [ ] and type ```python manage.py runserver```
-
+1. install <a href="https://docs.docker.com/engine/install/">docker</a> and <a href="https://docs.docker.com/compose/install/linux/">docker compose</a>
+2. run command
+   ```sh
+    docker compose up --build
+   ```
 
 
 
