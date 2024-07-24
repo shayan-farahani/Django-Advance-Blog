@@ -61,21 +61,10 @@ I would like to work with them more in this project .
 
 _To work with the project you must install the following packages_
 
-2. install django
+2. install package
    ```sh
-    pip install django
+    pip install -r requirements.txt
    ```
-   
-3. Install restframework
-   ```sh
-   pip install rest framework
-   ```
-   
-4. install pytest
-   ```sh
-   pip install pytest django-pyest
-   ```
-
 
 
 
