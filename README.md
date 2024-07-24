@@ -60,7 +60,7 @@ I would like to work with them more in this project .
 <!-- ROADMAP -->
 ## Project Setup
 1. install <a href="https://docs.docker.com/engine/install/">docker</a> and <a href="https://docs.docker.com/compose/install/linux/">docker compose</a>
-2. run command
+2. run this command:
    ```sh
     docker compose up --build
    ```
