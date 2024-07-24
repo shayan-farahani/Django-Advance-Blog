@@ -1,5 +1,8 @@
-<img align="center" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5-4Ly5xfWZbsrJincNC9Cjdh9OYA47xtFmg&s" alt="Logo" width="50" height="40"> 
-<h1 align="center">blog app</h1>
+<div align="center">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrfRJhtdWjjrKqo-VprKsotuSPnkeoGdphSw&s" alt="Logo"> 
+  <h1>blog app</h1>
+<div/>
+
 <br/>
   <p>
     this repository for build blog app with django and drf
