@@ -18,7 +18,7 @@
 
 <!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Table of Contents</summary>
+  <summary>Technology used</summary>
   <ol>
     <li>
       <a href="https://www.djangoproject.com">django</a>
