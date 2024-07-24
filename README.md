@@ -1,19 +1,14 @@
-<br />
-<div align="center">
-    <a href="/">
-<img src="https://camo.githubusercontent.com/c96cb99431280ee1fdce3fe6b5338c5aca7bcaf94331b7426803ac9b426f6cef/68747470733a2f2f63646e2e776f726c64766563746f726c6f676f2e636f6d2f6c6f676f732f646a616e676f2e737667" alt="Logo" width="80" height="80">
-    </a>
-  <h3 align="center">django project</h3>
-
-  <p align="center">
-    this is example repository for django pytest
+<img align="center" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5-4Ly5xfWZbsrJincNC9Cjdh9OYA47xtFmg&s" alt="Logo" width="50" height="40"> 
+<h1 align="center">blog app</h1>
+<br/>
+  <p>
+    this repository for build blog app with django and drf
     <br />
     <br />
     <a href="https://www.geeksforgeeks.org/python-todo-webapp-using-django/"><strong>docs for todo</strong></a>
     <br />
     <h6> Report Bug to shayanpars230@gmail.com</h6>
   </p>
-</div>
 
 
 
