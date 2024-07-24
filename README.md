@@ -67,6 +67,4 @@ I would like to work with them more in this project .
 پ
 ## Contact
 
-shayan - shayanpars230@gmail.com
-=======
-# django-blog-learn
+<h4>shayan - shayanpars230@gmail.com</h4>
