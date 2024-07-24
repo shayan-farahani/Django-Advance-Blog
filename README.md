@@ -1,7 +1,8 @@
 <div align="center">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrfRJhtdWjjrKqo-VprKsotuSPnkeoGdphSw&s" alt="Logo"> 
-  <h1>blog app</h1>
-<div/>
+<img align="center" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrfRJhtdWjjrKqo-VprKsotuSPnkeoGdphSw&s" alt="Logo">
+<h1>blog app</h1>
+</div>
+
 
 <br/>
   <p>
